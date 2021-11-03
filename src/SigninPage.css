@@ -1,0 +1,18 @@
+.signin_form{
+    max-width: 350px;
+    border: 1px solid lightgray;
+    margin-top: 200px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+.register_fields, .signin_fields{
+    display:flex;
+    flex-direction: column;
+    padding: 40px;
+}
+.signin_button{
+    cursor: pointer;
+}
+.register_button{
+    cursor:pointer;
+}
