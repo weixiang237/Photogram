@@ -16,6 +16,7 @@ function PostCard ({username, image, text}) {
             <img 
                 className = 'post_image'
                 src = {image}
+                alt =''
             />
             <h4 className = 'post_text'>
                 <strong>{username}</strong>
