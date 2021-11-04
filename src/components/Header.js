@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core'
 import { auth } from '../firebase'
 import NewPost from './NewPost'
 
-function Header ({username}) {
+function Header () {
 
     return(
         <div className = "header">
@@ -14,7 +14,7 @@ function Header ({username}) {
                 alt=""
             />
             <div className = 'header_fields'>
-                <NewPost username = {username}/>
+                <NewPost/>
                 <Button  onClick = {() => auth.signOut()}>Sign out</Button>
             </div>
         </div>

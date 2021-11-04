@@ -20,7 +20,7 @@ function MainPage () {
           <div className ='mainPage_posts'>
             {
             posts.map(({id, post}) => (
-            <PostCard key={id} username = {post.username} image = {post.imageUrl} text = {post.caption}/>
+              <PostCard key={id} postId = {id} username = {post.username} image = {post.imageUrl} text = {post.caption}/>
             ))
             }
           </div>

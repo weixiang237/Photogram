@@ -7,10 +7,10 @@ import { auth } from './firebase'
 
 function App() {
   const [user, setUser] = useState(null)
+  
   useEffect(() =>{
     const unsubscribe = auth.onAuthStateChanged((authUser) =>{
       if(authUser){
-        console.log(authUser);
         setUser(authUser);
       }
       else{
@@ -21,13 +21,13 @@ function App() {
       unsubscribe();
     }
   }, [user])
-  
+
   return (
         <div className="App">
         {
           user != null ? 
           <div className = 'Logged'>
-            <Header username = {user.displayName}/>
+            <Header/>
             <MainPage/>
           </div>
           :

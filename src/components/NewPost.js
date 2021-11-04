@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import '../NewPost.css'
-import { storage, db } from '../firebase';
+import { storage, db, auth} from '../firebase';
 import firebase from "firebase/compat/app";
 import LinearProgress from '@material-ui/core/LinearProgress'
 
@@ -19,12 +19,13 @@ const style = {
   p: 4,
 };
 
-function NewPost ({username}) {
+function NewPost () {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
   const [caption, setCaption] = useState('');
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0)
+
+  const handleOpen = () => setOpen(true);
 
   const handleClose = () => {
     setOpen(false);
@@ -62,12 +63,12 @@ function NewPost ({username}) {
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           caption: caption,
           imageUrl: url,
-          username: username
+          username: auth.currentUser.displayName
         });
+        setOpen(false)
         setCaption('')
         setImage(null)
         setProgress(0)
-        setOpen(false)
       })
     )
   }

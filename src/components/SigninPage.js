@@ -20,7 +20,6 @@ function SigninPage (){
 
     function handleShowRegister (e){
         e.preventDefault();
-        console.log('you clicked register')
         setShowRegister(!showRegister)
     }
 
